@@ -1,0 +1,15 @@
+<div ng-include="'views/menu.html'"></div>
+<h1>{{ title }}</h1>
+<form ng-submit="login(usuario)" >
+    <div class="control-form">
+        <label for="mail" class="control-label">Mail: </label>
+        <input type="email" id="mail" ng-model="usuario.MAIL" class="form-control" autocomplete="off" required>
+		<span class="mensaje_form" ng-show="mensaje_mail">{{ usuario_mensaje }}</span>
+    </div>
+    <div class="control-form">
+        <label for="contrasenia" class="control-label">Contraseña: </label>
+        <input type="password" id="contrasenia" ng-model="usuario.CONTRASENIA" class="form-control" autocomplete="off" required>
+		<span class="mensaje_form" ng-show="mensaje_contrasenia">{{ contrasenia_mensaje }}</span>
+    </div>
+	<button class="btn btn-primary crear">Crear</button>
+</form>

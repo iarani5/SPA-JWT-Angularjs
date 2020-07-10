@@ -1,0 +1,36 @@
+<div ng-include="'views/menu.html'"></div>
+
+<h1>{{ title }}</h1>
+
+<a href="#/listado_confesiones/todas" class="back">Volver</a>
+
+<!--<div class='mensaje'>{{ mensaje }}</div>-->
+
+<form ng-submit="editar()" id="registro_form">
+    <div class="control-form">
+        <label for="titulo" class="control-label">Titulo: </label>
+        <input type="text" id="titulo" ng-model="confesion.TITULO" class="form-control">
+		<span class="mensaje_form" ng-show="mensaje_titulo">{{ titulo_mensaje }}</span>
+    </div>
+    <div class="control-form">
+        <label for="confesion" class="control-label">Confesion: </label>
+        <textarea  id="confesion" ng-model="confesion.CONFESION" class="form-control"></textarea>
+		<span class="mensaje_form" ng-show="mensaje_confesion">{{ confesion_mensaje }}</span>
+    </div>
+    <div class="control-form" id="usuario">
+		<label class="control-label">Usuario creador: </label>
+		<select name="usuario" id="usuario" ng-model="confesion.FKUSUARIO" class="form-control">
+	         <option ng-repeat="user in usuarios" value="{{user.ID}}">{{user.USUARIO}}</option>
+		</select>
+		<span class="mensaje_form" ng-show="mensaje_fkusuario">{{ fkusuario_mensaje }}</span>
+    </div>
+    <div class="control-form">
+        <label for="fecha_creacion" class="control-label">Fecha de creacion: </label>
+		
+        <input type="date" id="fecha_creacion" ng-model="confesion.FECHA_CREACION_DATE" class="form-control">
+        
+		<input type="time" id="fecha_creacion_time" ng-model="confesion.FECHA_CREACION_TIME" class="form-control">
+		<span class="mensaje_form" ng-show="mensaje_fecha">{{ fecha_mensaje }}</span>
+    </div>
+    <button class="btn btn-primary crear">Editar</button>
+</form>

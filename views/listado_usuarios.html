@@ -1,0 +1,42 @@
+<div ng-include="'views/menu.html'"></div>
+
+
+<h1>PANEL | Listado de Usuarios</h1>
+
+<a href="#/usuarios/nuevo" class="btn btn-primary">Crear nuevo usuario</a>
+
+<div class='mensaje'>{{ mensaje }}</div>
+<div class="text-center"><img src="img/ajax-loader.gif" alt="Cargando..." ng-show="loading"></div>
+<div ng-show="usuarios_listado.length == 0 && !loading">No hay resultados.</div>
+<table class="table table-bordered table-striped" ng-hide="usuarios_listado.length == 0 || loading">
+	<tr>
+		<th>ID</th>
+		<th>USUARIO</th>
+		<th>MAIL</th>
+		<th>SEXO</th>
+		<th>FECHA NAC.</th>
+		<th>NIVEL</th>
+		<th>VER</th>
+		<th>EDITAR</th>
+		<th>ELIMINAR</th>
+		
+	</tr>
+
+	<tr ng-repeat="user in usuarios_listado">
+		<td>{{ user.ID }}</td>
+		<td>{{ user.USUARIO }}</td>
+		<td>{{ user.MAIL }}</td>
+		<td>{{ user.SEXO }}</td>
+		<td>{{ user.FECHA_NACIMIENTO }}</td>
+		<td>{{ user.NIVEL }}</td>
+		<td><a ng-href="#/usuarios/{{ user.ID }}" title="Ver" class="ver">ver</a></td>
+		<td><a ng-href="#/usuarios/{{ user.ID }}/editar" title="Editar" class="editar">editar</a></td>
+		<td> <a ng-href="#/usuarios/{{ user.ID }}/eliminar" title="Eliminar" class="eliminar">eliminar</a></td>
+	</tr>
+</table>
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+
+<div ng-include="'views/menu.html'"></div>
+
+<h1>PANEL | Listado de Confesiones</h1>
+
+<!--<a href="#/listado_confesiones/todas/nueva" class="btn btn-primary">Crear nueva confesion</a>-->
+
+<div class='mensaje'>{{ mensaje }}</div>
+<div class="text-center"><img src="img/ajax-loader.gif" alt="Cargando..." ng-show="loading"></div>
+<div ng-show="confesiones.length == 0 && !loading">No hay resultados.</div>
+<table class="table table-bordered table-striped" ng-hide="confesiones.length == 0 || loading" id="tabla_confesiones">
+	<tr>
+		<th>ID</th>
+		<th>TITULO</th>
+		<th>CONFESION</th>
+		<th>FECHA</th>
+		<th>USUARIO</th>
+		<th>SEXO</th>
+		<th>VER</th>
+		<th>EDITAR</th>
+		<th>ELIMINAR</th>
+		
+	</tr>
+
+	<tr ng-repeat="confes in confesiones">
+		<td>{{ confes.ID }}</td>
+		<td>{{ confes.TITULO }}</td>
+		<td>{{ confes.CONFESION }}</td>
+		<td>{{ confes.FECHA_CREACION }}</td>
+		<td>{{ confes.USUARIO }}</td>
+		<td>{{ confes.SEXO }}</td>
+		<td><a ng-href="#/listado_confesiones/todas/{{ confes.ID }}" title="Ver" class="ver">ver</a></td>
+		<td><a ng-href="#/listado_confesiones/todas/{{ confes.ID }}/editar" title="Editar" class="editar">editar</a></td>
+		<td> <a ng-href="#/listado_confesiones/todas/{{ confes.ID }}/eliminar" title="Eliminar" class="eliminar">eliminar</a></td>
+	</tr>
+</table>
+
+
+
+
+
+

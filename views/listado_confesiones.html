@@ -1,0 +1,46 @@
+<div ng-include="'views/menu.html'"></div>
+
+<h1 ng-show="!mias ">Home</h1>
+<h1 ng-show="mias ">Mias</h1>
+<!--<div class='mensaje'>{{ mensaje }}</div>-->
+<section id="formconfesar" ng-show="!mias">
+	<h2>Confesar</h2>
+	<form ng-submit="crear_confesion()">
+		<div class="container_conf">
+			<div class="control-form">
+				<input type="text" id="confesion" ng-model="confesion.TITULO" class="form-control">
+				<label for="confesion" class="control-label">TITULO</label>
+			</div>
+			<div class="control-form">
+				<textarea id="confesion" ng-model="confesion.CONFESION" class="form-control"></textarea>
+				<label for="confesion" class="control-label">CONFESION</label>
+			</div>
+			<button class="btn btn-primary" id="btn_confesar">Crear</button>
+			<span class="mensaje_form" ng-show="mensaje_confesion">{{ confesion_mensaje }}</span>
+			<span class="mensaje_form" ng-show="mensaje_titulo">{{ titulo_mensaje }}</span>
+		</div>
+	</form>
+</section>
+
+<section id="confesiones">
+<h2 ng-show="!mias && !editar">Últimas <br>confesiones</h2>
+<h2 ng-show="mias">Mis <br>confesiones</h2>
+    <div class="text-center"><img src="img/ajax-loader.gif" alt="Cargando..." ng-show="loading"></div>
+	<div ng-show="confesiones.length == 0 && !loading" class="sin_resultados">No hay resultados.</div>
+	<div ng-hide="confesiones.length == 0 || loading">
+		<div ng-repeat="confesion in confesiones" class="unaconfesion">
+			<div class="{{ confesion.SEXO }}">{{  confesion.EDAD }} años</div>
+			<div class="botones_mias" ng-show="mias">
+				<div><a ng-href="#/listado_confesiones/{{ confesion.ID }}/{{ confesion.FKUSUARIO }}/editar" title="Editar" class="editar">editar</a></div>
+				<div><a ng-href="#/listado_confesiones/{{ confesion.ID }}/{{ confesion.FKUSUARIO }}/eliminar" title="Eliminar" class="eliminar">eliminar</a></div>
+			</div>
+			<div>
+				<div>#{{ confesion.ID }}</div>
+				<h3>{{ confesion.TITULO }}</h3>
+				<div>{{ confesion.USUARIO }}</div>
+				<div>{{ confesion.CONFESION }}</div>
+				<div>{{ confesion.FECHA_CREACION }}</div>
+			</div>
+		</div>
+	</div>
+</section>

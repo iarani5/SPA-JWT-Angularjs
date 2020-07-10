@@ -1,0 +1,13 @@
+<div ng-include="'views/menu.html'"></div>
+
+<div id="cont_eliminar">
+<h1>{{ title }}</h1>
+
+<div ng-show="estadoMensaje != null" class="alert" ng-class="{'alert-success': estado == 1, 'alert-danger': estado == 0}">{{ estadoMensaje }}</div>
+
+<h2 class='user'>USUARIO: {{ usuario.USUARIO }}</h2>
+<p>MAIL: {{ usuario.MAIL }}</p>
+<p>NIVEL: {{ usuario.NIVEL }}</p>
+
+<a href="#/usuarios" class="back">Volver</a><button ng-click="eliminar(usuario.ID)" class="btn btn-primary boton eliminar_usr">Eliminar</button>
+</div>

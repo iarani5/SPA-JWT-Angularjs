@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="confesiones">
+<head>
+	<title>CONFESIONES</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/CreativeLinkEffects/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/CreativeLinkEffects/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/CreativeLinkEffects/css/component.css" />
+	<script src="css/CreativeLinkEffects/js/modernizr.custom.js"></script>
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body ng-controller='menuCtrl' >
+	<header>
+		<!-- <nav class='cl-effect-11'>
+		<div ng-repeat="item in menu"><a href='#/{{ item.ruta }}' id='{{ item.nombre }}' data-hover='{{ item.nombre }}'><span>{{ item.nombre }}</span></a></div>
+		</nav> -->
+	</header>
+	<div class="container" ng-view>
+
+	</div>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/rutas.js"></script>
+	<script src="js/services/UsuarioService.js"></script>
+	<script src="js/services/ConfesionService.js"></script>
+	<script src="js/services/SexoService.js"></script>
+	<script src="js/services/AuthService.js"></script>
+	<script src="js/services/MenuService.js"></script>
+	<script src="js/controllers/controllers.js"></script>
+</body>
+</html>

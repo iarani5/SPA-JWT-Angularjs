@@ -1,0 +1,16 @@
+<div ng-include="'views/menu.html'"></div>
+
+<a href="#/listado_confesiones/todas" class="back" id="volver_confes">Volver</a>
+<div id="cont_eliminar">
+<h1>{{ title }}</h1>
+
+<div ng-show="estadoMensaje != null" class="alert" ng-class="{'alert-success': estado == 1, 'alert-danger': estado == 0}">{{ estadoMensaje }}</div>
+<div id="eliminar_confes">
+	<h2>TITULO</h2>
+	<p>{{ confesion.TITULO }}</p>
+	<h2>CONFESION</h2>
+	<p>{{ confesion.CONFESION }}</p>
+	<p>{{ confesion.FECHA_CREACION }}</p>
+	<p>CONFESION Nº : {{ confesion.ID }}</p>
+</div>
+</div>

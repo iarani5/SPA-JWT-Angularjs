@@ -1,0 +1,44 @@
+<div ng-include="'views/menu.html'"></div>
+<h1>{{ title }}</h1>
+
+<a href="#/usuarios" class="back" ng-show="nivel">Volver</a>
+
+<form ng-submit="crear()" id='registro_form'>
+    <div class="control-form">
+        <label for="usuario" class="control-label">Usuario: </label>
+        <input type="text" id="usuario" ng-model="usuario.USUARIO" class="form-control">
+	    <span class="mensaje_form" ng-show="mensaje_usuario">{{ usuario_mensaje }}</span>
+    </div>
+    <div class="control-form">
+        <label for="mail" class="control-label">Mail: </label>
+        <input type="email" id="mail" ng-model="usuario.MAIL" class="form-control" autocomplete="off">
+	    <span class="mensaje_form" ng-show="mensaje_mail">{{ mail_mensaje }}</span>
+    </div>
+    <div class="control-form">
+        <label for="contrasenia" class="control-label">Contraseña: </label>
+        <input type="password" id="contrasenia" ng-model="usuario.CONTRASENIA" class="form-control" autocomplete="off">
+	    <span class="mensaje_form" ng-show="mensaje_contrasenia">{{ contrasenia_mensaje }}</span>
+    </div>
+    <div class="control-form" id="sexos">
+		<label class="control-label">Sexo: </label>
+			<div ng-repeat="sexo in sexos">
+				<input type="radio" name="sexo" value='{{ sexo.ID }}' id="{{ sexo.SEXO }}" ng-checked="true" ng-model="usuario.FKSEXO" >
+				<label for="{{ sexo.SEXO }}">{{ sexo.SEXO }}</label>
+			</div> 
+		    <span class="mensaje_form" ng-show="mensaje_sexo">{{ sexo_mensaje }}</span>
+    </div> 
+    <div class="control-form">
+        <label for="fecha_nacimiento" class="control-label">Fecha de nacimiento: </label>
+        <input type="date" id="fecha_nacimiento" ng-model="usuario.FECHA_NACIMIENTO" class="form-control">
+	    <span class="mensaje_form" ng-show="mensaje_fecha">{{ fecha_mensaje }}</span>
+    </div>
+    <div class="control-form" ng-show="nivel">
+        <label for="nivel" class="control-label">Nivel: </label>
+		<select name="nivel" class="select form-control" id="nivel" ng-model="usuario.NIVEL" ng-init="usuario.NIVEL='usuario'">
+			<option value="usuario">Usuario</option>
+			<option value="admin">Admin</option>
+		</select>
+	    <span class="mensaje_form" ng-show="mensaje_nivel">{{ nivel_mensaje }}</span>
+    </div>
+    <button class="btn btn-primary crear">Crear</button>
+</form>

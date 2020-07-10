@@ -1,0 +1,20 @@
+<div ng-include="'views/menu.html'"></div>
+
+<h1>Nueva confesion</h1>
+<!--<div class='mensaje'>{{ mensaje }}</div>-->
+<section id="formconfesar">
+	<h2>Confesar</h2>
+	<form ng-submit="crear()">
+		<div class="container_conf">
+			<div class="control-form">
+				<input type="text" id="confesion" ng-model="confesion.TITULO" class="form-control">
+				<label for="confesion" class="control-label">TITULO</label>
+			</div>
+			<div class="control-form">
+				<textarea id="confesion" ng-model="confesion.CONFESION" class="form-control"></textarea>
+				<label for="confesion" class="control-label">CONFESION</label>
+			</div>
+		<button class="btn btn-primary" id="btn_confesar">Crear</button>
+		</div>
+	</form>
+</section>

@@ -1,0 +1,33 @@
+<div ng-include="'views/menu.html'"></div>
+
+<h1 >{{ title }}</h1>
+
+<a href="#/usuarios" class="back">Volver</a>
+
+<div class="text-center"><img src="img/ajax-loader.gif" alt="Cargando..." ng-show="loading"></div>
+
+<div ng-if="eliminando == true && eliminarCompletado == true" class="alert" ng-class="{'alert-danger': estadoStatus == 0, 'alert-success': estadoStatus == 1}">{{ estadoTexto }}</div>
+
+<div ng-hide="loading">
+	<h2 class="user">{{ usuario.USUARIO }}</h2>
+
+	<table class="table table-bordered table-striped">
+		<tr>
+			<td>Mail:</td>
+			<td>{{ usuario.MAIL }}</td>
+		</tr>
+		<tr>
+			<td>Fecha de nacimiento:</td>
+			<td>{{ usuario.FECHA_NACIMIENTO }}</td>
+		</tr>
+		<tr>
+			<td>Sexo:</td>
+			<td>{{ usuario.SEXO }}</td>
+		</tr>
+		<tr>
+			<td>Nivel:</td>
+			<td>{{ usuario.NIVEL }}</td>
+		</tr>
+	</table>
+
+</div>

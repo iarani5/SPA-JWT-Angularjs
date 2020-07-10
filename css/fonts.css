@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: 'ac_lineregular';
+    src: url('../fonts/ac_line-webfont.woff2') format('woff2'),
+         url('../fonts/ac_line-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd-Cn';
+    src: url('../fonts/HelveticaNeueLTStd-Cn.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
